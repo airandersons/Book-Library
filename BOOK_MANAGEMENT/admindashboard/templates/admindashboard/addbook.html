@@ -88,7 +88,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         </ul>
                       </li>  
                   <li  >
-                        <a class="active-menu"  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                        <a class="active-menu"  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Add New Book</a>
                     </li>	
                 </ul>
                
@@ -115,27 +115,28 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>Basic Form Examples</h3>
-                                <form role="form" action="#" method="post">
+                                <form role="form" action="{% url 'admindashboard:addbook'%}" method="post">
                                     {% csrf_token %}
+                                    {{ form.non_field_errors }}
                                     <div class="form-group">
-                                        <label>Book Title</label>
-                                        <input class="form-control" placeholder="PLease Enter your first name" />
+                                        {{ form.title.errors }}
+                                        <label for={{ form.title.id_for_label }}>Book Title</label>
+                                        {{ form.title}}
+                                    </div> 
+                                    <div class="form-group">
+                                        {{ form.author.errors }}
+                                        <label for={{ form.author.id_for_label }}>Book Author</label>
+                                        {{ form.author }}
                                     </div>
                                     <div class="form-group">
-                                        <label>Book Author</label>
-                                        <input class="form-control" placeholder="PLease Enter your last name" />
+                                        {{ form.category.errors }}
+                                        <label for={{ form.category.id_for_label }}>Book Category</label>
+                                        {{ form.category }}
                                     </div>
                                     <div class="form-group">
-                                        <label>Category</label>
-                                        <input class="form-control" placeholder="PLease Enter username" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>File input</label>
-                                        <input type="file" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Text area</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        {{ form.description.errors }}
+                                        <label for{{ form.description.id_for_label }}>Description</label>
+                                        {{ form.description }}
                                     </div>
                                     
                                     <button type="submit" class="btn btn-default">Submit Button</button>

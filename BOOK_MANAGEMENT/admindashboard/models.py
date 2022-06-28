@@ -7,6 +7,7 @@ class Book(models.Model):
     author = models.CharField('Book Author',max_length=50)
     pub_date = models.DateField('Publication date',auto_now_add=True)
     category = models.CharField(max_length=20)
+    description = models.TextField(null=True, blank=True)
     avail_status = models.CharField('Availability status',max_length=13, default='Available')
 
     def __str__(self):
