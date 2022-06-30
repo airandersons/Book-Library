@@ -9,9 +9,10 @@
 
 </head>
 <body>
+   
 
     {% for message in messages %}
-<div class="alert alert-{{ message.tags}} alert-dismissble fade show" role="alert">
+<div class="alert alert-{{ message.tags}} alert-dismissble fade show" role="alert" class="container bg bg-white">
 <strong>Message:</strong>{{ message }}
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 <span aria-hidden="true">&times;</span>
@@ -19,7 +20,32 @@
 </div>
 {% endfor %}
 
-    <h3>Welcome to Web Libary</h3>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/signin">SignIn</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/signup">SignUp</a>
+              </li>
+          </div>
+        </div>
+      </nav>
+<h1 class="text-center">Welcome to Web Libary</h1>
+
+<p>
+    This is a library Management System.<br>
+    One can borrow a book and later on return it.They are a multitude of books.<br>
+    It helps one in search of a particular book.<br>
+    One is Required to sign in.
+
+</p>
 
 
 
