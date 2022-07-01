@@ -61,7 +61,7 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, "authentication/index.html", {'fname':fname})
+            return render(request, "authentication/loginview.html", {'fname':fname})
 
         else:
             messages.error(request, "Invalid Credentials!")
@@ -73,3 +73,9 @@ def signout(request):
     logout(request)
     messages.success(request, "Logged Out Successfully")
     return redirect('home')
+
+def About(request):
+    return render(request, "authentication/about.html")
+
+def loginview(request):
+    return render(request, "authentication/loginview.html")
