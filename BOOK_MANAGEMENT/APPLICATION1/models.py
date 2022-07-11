@@ -10,7 +10,7 @@ class Book(models.Model):
     Uploaded = models.DateTimeField(auto_now=True)
     Due_date = models.DateTimeField(auto_now=True)
     books= models.FileField(upload_to='BOOK_MANAGEMENT/books/')
-    bookcover=models.ImageField(upload_to='BOOK_MANAGEMENT/books/covers')
+    bookcover=models.ImageField()
     def __str__(self):
         return self.title 
      
