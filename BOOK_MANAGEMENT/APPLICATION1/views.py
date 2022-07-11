@@ -3,14 +3,16 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-
+from . models import Book
 # Create your views here.
+
 def home(request):
     context = {}
     return render(request, "authentication/index.html", context)
 
 def borrow(request):
-    context = {}
+    new_books = Book.objects.order_by('title')[:]
+    context = {'new_books': new_books}
     return render(request, "authentication/borrow.html", context)
 
 def borrowed(request):
@@ -91,3 +93,5 @@ def About(request):
 
 def loginview(request):
     return render(request, "authentication/loginview.html")
+
+    
