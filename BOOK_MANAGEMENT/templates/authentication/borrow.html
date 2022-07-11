@@ -4,7 +4,7 @@
 {% for Book in new_books %}
     <div class="row">
         <div class="col-md-3 product-men">
-            <img class="thumbnail" scr="{{Book.bookcover}}">
+            <img class="thumbnail" scr="{{ Book.bookcover.url }}">
             <div class="box-element book-title">
                 <h6><strong>{{ Book.title }}</strong></h6>
                 <p>{{ Book.author }}</p>
