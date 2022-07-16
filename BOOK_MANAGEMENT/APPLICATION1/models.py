@@ -9,7 +9,7 @@ class Book(models.Model):
     borrower_id = models.CharField(max_length=100,null=True,blank=True)
     Uploaded = models.DateTimeField(auto_now=True)
     Due_date = models.DateTimeField(auto_now=True)
-    books= models.FileField(upload_to='BOOK_MANAGEMENT/books/')
+    books= models.FileField()
     bookcover=models.ImageField()
     def __str__(self):
         return self.title 
